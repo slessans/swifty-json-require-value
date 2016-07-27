@@ -17,8 +17,7 @@ extension JSON {
         }
         throw rep.error!
     }
+    func requireValue<T>(atPath path: JSONSubscriptType, transform: (JSON) -> T?) throws -> T {
+        return try requireValue(atPath: [path], transform: transform)
+    }
 }
-
-
-
-
